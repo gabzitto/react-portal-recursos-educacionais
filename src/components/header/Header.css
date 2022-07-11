@@ -1,0 +1,26 @@
+header{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    height: 51px;
+    margin-bottom: 5px;
+}
+
+.header--center{
+    background-color: rgb(46, 46, 252);
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.7rem;
+}
+
+.header--center a{
+    color:aqua;
+    text-decoration: none;
+}
+
+.header--center a:hover{
+    color:rgb(10, 185, 185);
+}
+
