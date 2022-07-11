@@ -1,2 +1,2 @@
 # react-portal-recursos-educacionais
-React, API Portal MEC, Portal Recursos Educacionais Digitais
+Com React, Portal Recursos Educacionais Digitais usando a API Portal MEC.
