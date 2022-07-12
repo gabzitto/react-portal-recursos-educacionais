@@ -1,13 +1,16 @@
 import React from 'react'
 import './Content.css';
 
+import {useEffect, useState} from 'react';
+
 const Content = ({apiData}) => {
 
-  console.log(apiData);
   return (
     <section>
         <ul>
-            <li></li>
+          {apiData != undefined &&
+            <li>...</li>
+          }
         </ul>
     </section>
   )
