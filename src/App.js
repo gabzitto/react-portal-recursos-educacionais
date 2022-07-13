@@ -23,7 +23,7 @@ function App() {
     fetch('https://api.portalmec.c3sl.ufpr.br/v1/learning_objects')
     .then((response) => response.json())
     .then((data) => setDatas(data));
-  */
+    */
    
   
     //console.log(datas);

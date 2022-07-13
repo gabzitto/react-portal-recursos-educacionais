@@ -19,16 +19,27 @@ async function getRED(numItems) {
     return respData;
 
 }*/
-async function getRED() { 
-    const response = await axios.get({
-      URL: 'https://api.portalmec.c3sl.ufpr.br/v1/learning_objects'
-    })
-    const items = response.data;
-    this.setState({
-    isLoaded: false,
-    items: items,
-  });
+
+
+const getTodoItems = async () => {
+  try {
+    const response = await axios.get(APIURL);
+
+    const todoItems = response.data;
+
+    for (let index = 12; index < 50; index++) {
+      //setDatas([...datas, datas[Math.floor(Math.random() * 11)]]);
+      todoItems.push(todoItems[Math.floor(Math.random() * 11)]);
+    }
+
+    //console.log(todoItems);
+
+    return todoItems;
+  } catch (errors) {
+    console.error(errors);
+    return;
   }
+};
 
 
-export default getRED;
+export default getTodoItems;
