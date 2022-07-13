@@ -15,31 +15,25 @@ function App() {
   useEffect(() => {
     document.title = "RED";
 
-    /*
+    
     axios.get(baseURL).then((response) => {
       setDatas(response.data);
     });
-    */
-      fetch('https://api.portalmec.c3sl.ufpr.br/v1/learning_objects')
-      .then((response) => response.json())
-      .then((data) => setDatas(data));
     /*
-    if(datas != undefined){
-      const number_items_API = 50;
-
-      for (let index = 12; index < number_items_API; index++) {
-        //setDatas([...datas, datas[Math.floor(Math.random() * 11)]]);
-        datas.push(datas[Math.floor(Math.random() * 11)]);
-      }
-    }
-    console.log(datas);
-    */
+    fetch('https://api.portalmec.c3sl.ufpr.br/v1/learning_objects')
+    .then((response) => response.json())
+    .then((data) => setDatas(data));
+  */
+   
+  
+    //console.log(datas);
+    
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <Content apiData={datas}  />
+    {datas != undefined  && <Content apiData={datas}  /> }
     </div>
   );
 }
