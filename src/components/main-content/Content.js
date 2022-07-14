@@ -9,6 +9,9 @@ const Content = ({apiData}) => {
   
   const [hasLoaded, setHasLoaded] = useState(false);
 
+  console.log(apiData);
+
+  /*
   useEffect(() => {
     
     if(!hasLoaded && apiData.length < number_items_API){
@@ -16,12 +19,13 @@ const Content = ({apiData}) => {
         //setDatas([...datas, datas[Math.floor(Math.random() * 11)]]);
         apiData.push(apiData[Math.floor(Math.random() * 11)]);
       }
-      console.log(apiData);
+      //console.log(apiData);
       if(apiData.length >= number_items_API) setHasLoaded(true);
       
     }
   }, []);
-
+  */
+ 
   return (
     hasLoaded ? <main>
         <ul className="listaItems">
