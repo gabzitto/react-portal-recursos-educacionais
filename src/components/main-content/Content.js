@@ -7,6 +7,7 @@ const Content = ({apiData}) => {
 
   //console.log(apiData.length);
 
+  const number_items_in_one_page = 5;
 
   const handlePageSelect = (e) => {
     document.querySelectorAll(".page_id").forEach((item2, ind) => {
@@ -19,9 +20,7 @@ const Content = ({apiData}) => {
 
   const items_page = []
 
-  for (let i = 0; i < apiData.length; i++) {
-
-    
+  for (let i = 0; i < Math.ceil(apiData.length/number_items_in_one_page); i++) {
 
     if(i === 0){ 
       items_page.push(<li key={i} onClick={handlePageSelect} id="selected-page" className="page_id" >{i+1}</li>)
