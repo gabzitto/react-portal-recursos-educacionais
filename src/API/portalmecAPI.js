@@ -2,13 +2,13 @@ import axios from "axios";
 
 const APIURL = "https://api.portalmec.c3sl.ufpr.br/v1/learning_objects";
 
-const getTodoItems = async () => {
+const api_get = async (num_items) => {
   try {
     const response = await axios.get(APIURL);
 
     const todoItems = response.data;
 
-    for (let index = 12; index < 50; index++) {
+    for (let index = 12; index < num_items; index++) {
       //setDatas([...datas, datas[Math.floor(Math.random() * 11)]]);
       todoItems.push(todoItems[Math.floor(Math.random() * 11)]);
     }
@@ -23,7 +23,7 @@ const getTodoItems = async () => {
 };
 
 
-export default getTodoItems;
+export default api_get;
 
 /*
 async function getRED(numItems) {
@@ -47,7 +47,7 @@ async function getRED(numItems) {
 /*
 const address = axios.get(APIURL);
 
-const getTodoItems = () => {
+const api_get = () => {
   address.then((a) => {
     return a;
   });

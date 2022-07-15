@@ -2,11 +2,7 @@ import {useEffect, useState} from 'react';
 import './App.css';
 import Header from './components/header/Header';
 import Content from './components/main-content/Content';
-import getTodoItems from './API/portalmecAPI';
-import axios from "axios";
-
-const baseURL = "https://api.portalmec.c3sl.ufpr.br/v1/learning_objects";
-
+import api_get from './API/portalmecAPI';
 
 function App() {
 
@@ -16,7 +12,7 @@ function App() {
   useEffect(() => {
     document.title = "RED";
 
-    getTodoItems().then((a) => {
+    api_get(12).then((a) => {
       setDatas(a);
       setHasLoaded(true);
     });
@@ -40,7 +36,7 @@ function App() {
     return <p>Carregando...</p>;
   }
 
-  //console.log(getTodoItems());
+  //console.log(api_get());
 
 
   return (

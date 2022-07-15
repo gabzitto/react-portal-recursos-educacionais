@@ -1,5 +1,4 @@
 header{
-    background-color: red;
     display: flex;
     justify-content: center;
     height: 50px;
@@ -8,7 +7,7 @@ header{
 
 .header--center{
     background-color: rgb(46, 46, 252);
-    width: 900px;
+    width: 950px;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
