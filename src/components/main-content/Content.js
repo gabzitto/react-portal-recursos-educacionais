@@ -1,14 +1,39 @@
 import React from 'react'
 import './Content.css';
 
-//import {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const Content = ({apiData}) => {
 
-  console.log(apiData.length);
+  //console.log(apiData.length);
+
+
+  const handlePageSelect = (e) => {
+    document.querySelectorAll(".page_id").forEach((item2, ind) => {
+      if(item2.id == "selected-page") item2.removeAttribute('id');
+    })
+
+    e.target.id = "selected-page"
+    //console.log();
+  }
+
+  const items_page = []
+
+  for (let i = 0; i < apiData.length; i++) {
+
+    
+
+    if(i === 0){ 
+      items_page.push(<li key={i} onClick={handlePageSelect} id="selected-page" className="page_id" >{i+1}</li>)
+    } else {
+      items_page.push(<li key={i} onClick={handlePageSelect} className="page_id" >{i+1}</li>)
+    }
+
+  }
+
  
   return (
-    <div class="container">
+    <div className="container">
       <main>
           <ul className="listaItems">
           {apiData.map((element, key) => (
@@ -26,12 +51,9 @@ const Content = ({apiData}) => {
           </ul>
       </main> 
 
-      <div class="pagination">
+      <div className="pagination">
         <ul>
-            <li class="page_id" id="selected-page">1</li>
-            <li class="page_id" >2</li>
-            <li class="page_id" >3</li>
-            <li class="page_id" >4</li>
+            {items_page}
         </ul>
       </div>
 

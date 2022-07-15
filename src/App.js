@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {datas != undefined  && <Content apiData={datas} loading={hasLoaded} /> }
+      {datas !== undefined  && <Content apiData={datas} loading={hasLoaded} /> }
     </div>
   );
 }
