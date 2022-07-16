@@ -8,17 +8,21 @@ const Content = ({apiData}) => {
   //console.log(apiData.length);
 
   const number_items_in_one_page = 5;
+  const [pageOn, setPageOn] = useState(0);
 
   const handlePageSelect = (e) => {
     document.querySelectorAll(".page_id").forEach((item2, ind) => {
       if(item2.id == "selected-page") item2.removeAttribute('id');
     })
 
-    e.target.id = "selected-page"
-    //console.log();
+    e.target.id = "selected-page";
+    setPageOn(e.target.textContent-1);
+    //console.log(pageOn);
   }
 
-  const items_page = []
+  //console.log(pageOn);
+
+  const items_page = [];
 
   for (let i = 0; i < Math.ceil(apiData.length/number_items_in_one_page); i++) {
 
@@ -35,7 +39,7 @@ const Content = ({apiData}) => {
     <div className="container">
       <main>
           <ul className="listaItems">
-          {apiData.map((element, key) => (
+          {apiData.slice(pageOn*number_items_in_one_page,pageOn*number_items_in_one_page + number_items_in_one_page).map((element, key) => (
             <li key={key}>
               <img src={`https://api.portalmec.c3sl.ufpr.br${element.thumbnail}`} alt="img"/>
               <div className="itens-div">
