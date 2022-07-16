@@ -23,3 +23,12 @@ header{
     color:rgb(10, 185, 185);
 }
 
+
+@media screen and (max-width: 768px) {
+    .header--center{
+      width: 100%;  
+      margin-bottom: 0px;
+    }
+}
+
+
